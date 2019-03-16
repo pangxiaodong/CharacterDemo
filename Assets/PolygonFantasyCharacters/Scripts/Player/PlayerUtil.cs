@@ -14,23 +14,21 @@ public class PlayerUtil : MonoBehaviour
         for (int i = 0; i < m_charData.m_charPrefabs.Length; i++)
         {
             // create player script
-            //GameObject obj = GameObject.Instantiate(m_charData.m_charPrefabs[i]);
-            GameObject obj = m_charData.m_charPrefabs[i];
-            Player player = obj.GetComponent<Player>();
+            GameObject prefab = m_charData.m_charPrefabs[i];
+            Player player = prefab.GetComponent<Player>();
             if (player == null)
             {
-                player = obj.AddComponent<Player>();
+                player = prefab.AddComponent<Player>();
             }
 
             // fill content of player script
             player.m_charData = m_charData;
-            player.m_skinRender = obj.GetComponentInChildren<SkinnedMeshRenderer>();
-            player.m_spine = obj.transform.Find("Root/Hips/Spine_01");
+            player.m_skinRender = prefab.GetComponentInChildren<SkinnedMeshRenderer>();
+            player.m_spine = prefab.transform.Find("Root/Hips/Spine_01");
             player.m_charIndex = i;
+
             // save prefab
-            // UnityEditor.PrefabUtility.ApplyPrefabInstance(obj, UnityEditor.InteractionMode.AutomatedAction);
-            UnityEditor.PrefabUtility.SavePrefabAsset(obj);
-            //Destroy(obj);
+            UnityEditor.PrefabUtility.SavePrefabAsset(prefab);
         }
         Debug.Log("CreatePlayerScript: " + m_charData.m_charPrefabs.Length + " character prefab is processed.");
     }
