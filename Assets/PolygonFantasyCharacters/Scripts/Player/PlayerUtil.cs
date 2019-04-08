@@ -27,6 +27,19 @@ public class PlayerUtil : MonoBehaviour
             player.m_spine = prefab.transform.Find("Root/Hips/Spine_01");
             player.m_charIndex = i;
 
+            // create animator script
+            Animator animator = prefab.GetComponent<Animator>();
+            if (animator == null)
+            {
+                animator = prefab.AddComponent<Animator>();
+            }
+
+            // fill content of animator script
+            animator.runtimeAnimatorController = m_charData.m_animatorController;
+            animator.applyRootMotion = false;
+            // fill content of player script
+            player.m_animator = animator;
+
             // save prefab
             UnityEditor.PrefabUtility.SavePrefabAsset(prefab);
         }

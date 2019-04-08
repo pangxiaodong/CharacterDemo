@@ -350,10 +350,10 @@ Animator:
   m_GameObject: {fileID: 108664}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: e2958561779b1a748a4246b9d0c0b309, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2db5c9a61922e2e4eb4f399e04960de8, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -373,6 +373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_charData: {fileID: 11400000, guid: 5ac4f0a073859ee47add441b78019cbe, type: 2}
   m_skinRender: {fileID: 13733172}
+  m_animator: {fileID: 9554444}
   m_spine: {fileID: 481662}
   m_charIndex: 2
 --- !u!1 &109354

@@ -16,7 +16,7 @@ public class CameraControl : MonoBehaviour
     public float m_distance = 10.0f;
 
     private float m_currentX = 0.0f;
-    private float m_currentY = 45.0f;
+    private float m_currentY = 0.0f;
 
     private void Start()
     {
