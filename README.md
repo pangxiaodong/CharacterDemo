@@ -1,6 +1,12 @@
 # CharacterDemo
 
-## 1. 代码结构
+## 1. 运行效果
+
+![CreatePlayer](Images/CreatePlayer.png)
+
+![Hierarchy](Images/Hierarchy.png)
+
+## 2. 代码结构
 
 ### Player
 
