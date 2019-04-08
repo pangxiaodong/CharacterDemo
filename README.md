@@ -6,7 +6,14 @@
 
 ![Hierarchy](Images/Hierarchy.png)
 
-## 2. 代码结构
+## 2. 知识点
+
+- 使用ScriptObject，作为配置文件
+- 编辑器批量修改Prefab
+- 模型：若干低模的模型，有若干材质球可以换，来实现换肤
+- 动作：用了一个动作包里的动作，使用的是In-Place动作，不勾选Apply Root Mottion（否则位置还会有轻微的变化）
+
+## 3. 代码结构
 
 ### Player
 
