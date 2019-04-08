@@ -42,6 +42,7 @@
   {
       public GameObject[] m_charPrefabs;
       public Material[] m_charMats;
+      public AnimatorController m_animatorController;
   }
   ```
 
@@ -54,7 +55,7 @@
   public class PlayerUtil : MonoBehaviour
   {
       public CharacterData m_charData;
-  
+
       public void SetPlayerScript()
       {
           for (int i = 0; i < m_charData.m_charPrefabs.Length; i++)
@@ -66,13 +67,26 @@
               {
                   player = prefab.AddComponent<Player>();
               }
-  
+
               // fill content of player script
               player.m_charData = m_charData;
               player.m_skinRender = prefab.GetComponentInChildren<SkinnedMeshRenderer>();
               player.m_spine = prefab.transform.Find("Root/Hips/Spine_01");
               player.m_charIndex = i;
-  
+
+              // create animator script
+              Animator animator = prefab.GetComponent<Animator>();
+              if (animator == null)
+              {
+                  animator = prefab.AddComponent<Animator>();
+              }
+
+              // fill content of animator script
+              animator.runtimeAnimatorController = m_charData.m_animatorController;
+              animator.applyRootMotion = false;
+              // fill content of player script
+              player.m_animator = animator;
+
               // save prefab
               UnityEditor.PrefabUtility.SavePrefabAsset(prefab);
           }
